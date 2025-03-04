@@ -58,3 +58,17 @@ https://currate.ru/#description
         <ParentCode>R01010 </ParentCode>
     </Item>
 </Valuta>
+
+
+
+- прочитать ввод данных (info.Input())
+    - список валют
+    - форма запроса
+- получить данные API (service.GetData()) - может сохранить в redis?
+    - отобрать нужные данные
+        - тест
+- распарсить в модель (model & type)
+    - тест
+- провести расчет (service.Convert())
+    - тест
+- вывод результата (info.Show())
