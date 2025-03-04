@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: currency-converter
+    ports:
+      - "8001:8001"
+    # volumes:
+    #   - .env:/.env
