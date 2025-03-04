@@ -1,6 +1,6 @@
 package models
 
-type Valute struct {
+type Data struct {
 	ID      string
 	NumCode string
 	Nominal int
@@ -14,7 +14,6 @@ type Valute struct {
 }
 
 type CurrenciesData struct {
-	Date string
+	Valute map[string]Data
 	// Date   string `json:"date"`
-	Values map[string]Valute
 }

@@ -10,6 +10,7 @@ import (
 
 func GetData() (string, error) {
 	var data models.CurrenciesData
+	// data := make(map[string]models.Valute)
 	// url := "https://www.cbr.ru/scripts/XML_daily.asp"
 	url := "https://www.cbr-xml-daily.ru/daily_json.js"
 	resp, err := http.Get(url) //nolint: noctx
@@ -24,7 +25,13 @@ func GetData() (string, error) {
 	if errDecode != nil {
 		return "", fmt.Errorf("error decode: %w", errDecode)
 	}
-	fmt.Println(data.Values["AUD"])
+	// for val := range data {
+	// 	for v := range val {
+	// 		fmt.Println(v)
+	// 	}
+
+	// }
+	fmt.Println(data)
 	// // body, err :=
 	return "", nil
 }
