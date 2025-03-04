@@ -17,3 +17,44 @@
 https://www.cbr-xml-daily.ru/amp/
 https://www.cbr-xml-daily.ru/daily_json.js
 https://habr.com/ru/articles/813563/
+
+
+{
+    "Date": "2025-03-04T11:30:00+03:00",
+    "PreviousDate": "2025-03-01T11:30:00+03:00",
+    "PreviousURL": "\/\/www.cbr-xml-daily.ru\/archive\/2025\/03\/01\/daily_json.js",
+    "Timestamp": "2025-03-04T12:00:00+03:00",
+    "Valute": {
+        "AUD": {
+            "ID": "R01010",
+            "NumCode": "036",
+            "CharCode": "AUD",
+            "Nominal": 1,
+            "Name": "Австралийский доллар",
+            "Value": 55.5133,
+            "Previous": 54.8428
+        },
+    }
+}
+
+https://currate.ru/#description
+
+<ValCurs Date="04.03.2025" name="Foreign Currency Market">
+    <Valute ID="R01010">
+        <NumCode>036</NumCode>
+        <CharCode>AUD</CharCode>
+        <Nominal>1</Nominal>
+        <Name>Австралийский доллар</Name>
+        <Value>55,5133</Value>
+        <VunitRate>55,5133</VunitRate>
+    </Valute>
+</ValCurs>
+
+<Valuta name="Foreign Currency Market Lib">
+    <Item ID="R01010">
+        <Name>Австралийский доллар</Name>
+        <EngName>Australian Dollar</EngName>
+        <Nominal>1</Nominal>
+        <ParentCode>R01010 </ParentCode>
+    </Item>
+</Valuta>
