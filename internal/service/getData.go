@@ -13,7 +13,8 @@ func GetData() (models.CurrenciesData, error) {
 
 	// url := "https://www.cbr-xml-daily.ru/daily_utf8.xml"
 	url := "https://www.cbr-xml-daily.ru/daily_json.js"
-	resp, err := http.Get(url) //nolint: noctx
+	httpClient := &http.Client{}
+	resp, err := httpClient.Get(url)
 	if err != nil {
 		return data, err
 	}
@@ -26,5 +27,6 @@ func GetData() (models.CurrenciesData, error) {
 	if errDecode != nil {
 		return data, fmt.Errorf("error decode: %w", errDecode)
 	}
+	fmt.Println(data)
 	return data, nil
 }
