@@ -9,6 +9,5 @@ type Data struct {
 }
 
 type CurrenciesData struct {
-	// Date   string          `xml:"ValCurs" json:"date"`
 	Valute map[string]Data `xml:"Valute" json:"valute"`
 }

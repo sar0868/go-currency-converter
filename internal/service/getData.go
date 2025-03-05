@@ -10,7 +10,6 @@ import (
 
 func GetData() (models.CurrenciesData, error) {
 	var data models.CurrenciesData
-	// data := make(map[string]models.Valute)
 
 	// url := "https://www.cbr-xml-daily.ru/daily_utf8.xml"
 	url := "https://www.cbr-xml-daily.ru/daily_json.js"
@@ -27,10 +26,5 @@ func GetData() (models.CurrenciesData, error) {
 	if errDecode != nil {
 		return data, fmt.Errorf("error decode: %w", errDecode)
 	}
-
-	fmt.Println(data)
-	fmt.Println(data.Valute["AED"].Value)
-	fmt.Println(data.Valute["AED"].Name)
-	fmt.Println(data.Valute["AED"].NumCode)
 	return data, nil
 }
