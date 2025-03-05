@@ -1,10 +1,15 @@
 package info
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/sar0868/currency_converter/internal/models"
+	"github.com/sar0868/currency_converter/internal/service"
+)
 
 func InputInfo() {
 	Menu()
-	fmt.Println(ChoiceAction())
+	Actions(ChoiceAction())
 }
 
 func Show() {}
@@ -26,9 +31,9 @@ func ChoiceAction() string {
 func Actions(action string) {
 	switch action {
 	case "1":
-		fmt.Println("Расчет")
+		service.Input()
 	case "2":
-		fmt.Println("print slice currency")
+		fmt.Println(models.ValidList)
 	case "3":
 		fmt.Println("instruction")
 	case "4":
