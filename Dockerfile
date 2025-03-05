@@ -13,4 +13,4 @@ RUN go build -o /currency-converter
 FROM alpine:latest
 COPY --from=builder /currency-converter /currency-converter
 EXPOSE 8001
-CMD ["./currency-converter"]
+CMD ["/currency-converter"]

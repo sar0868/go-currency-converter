@@ -17,9 +17,9 @@ func TestConverter(t *testing.T) {
 		{
 			name: "Converted 1 EUR(2) USD(2): expected 1",
 			args: models.InputData{
-				Count:   1,
-				Valuta1: models.EUR,
-				Valuta2: models.USD,
+				Count:     1,
+				Exchanged: models.EUR,
+				Received:  models.USD,
 			},
 			data: models.CurrenciesData{
 				Valute: map[string]models.Data{
@@ -38,9 +38,9 @@ func TestConverter(t *testing.T) {
 		{
 			name: "Converted 1 EUR(3) USD(2): expected 1.5",
 			args: models.InputData{
-				Count:   1,
-				Valuta1: models.EUR,
-				Valuta2: models.USD,
+				Count:     1,
+				Exchanged: models.EUR,
+				Received:  models.USD,
 			},
 			data: models.CurrenciesData{
 				Valute: map[string]models.Data{
@@ -59,9 +59,9 @@ func TestConverter(t *testing.T) {
 		{
 			name: "Converted 3 EUR(nominal 10, value 4), val3) USD(2): expected 0.6",
 			args: models.InputData{
-				Count:   3,
-				Valuta1: models.EUR,
-				Valuta2: models.USD,
+				Count:     3,
+				Exchanged: models.EUR,
+				Received:  models.USD,
 			},
 			data: models.CurrenciesData{
 				Valute: map[string]models.Data{
