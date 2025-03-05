@@ -1,19 +1,14 @@
 package models
 
 type Data struct {
-	ID      string
-	NumCode string
-	Nominal int
-	Name    string
-	Value   float64
-	// ID      string  `json:"id"`
-	// NumCode string  `json:"numCode"`
-	// Nominal int     `json:"nominal"`
-	// Name    string  `json:"name"`
-	// Value   float64 `json:"value"`
+	NumCode  string  `xml:"NumCode" json:"numCode"`
+	CharCode string  `xml:"CharCode" json:"charCode"`
+	Nominal  int     `xml:"Nominal" json:"nominal"`
+	Name     string  `xml:"Name" json:"name"`
+	Value    float64 `xml:"Value" json:"value"`
 }
 
 type CurrenciesData struct {
-	Valute map[string]Data
-	// Date   string `json:"date"`
+	// Date   string          `xml:"ValCurs" json:"date"`
+	Valute map[string]Data `xml:"Valute" json:"valute"`
 }

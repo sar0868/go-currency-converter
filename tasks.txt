@@ -62,7 +62,7 @@ https://currate.ru/#description
 
 
 - прочитать ввод данных (info.Input())
-    - список валют
+    - список валют (info.InputInfo())
     - форма запроса
 - получить данные API (service.GetData()) - может сохранить в redis?
     - отобрать нужные данные

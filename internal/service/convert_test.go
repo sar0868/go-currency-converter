@@ -7,20 +7,28 @@ import (
 )
 
 func TestConverter(t *testing.T) {
-	type args struct {
-		valuetes []models.CurrenciesData
-	}
 	tests := []struct {
 		name    string
-		args    args
+		args    models.InputData
+		data    models.CurrenciesData
 		want    float64
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{
+			name: "Converted 1 EUR(2) USD(2): expected 1",
+			args: models.InputData{
+				Count:   1,
+				Valuta1: models.EUR,
+				Valuta2: models.USD,
+			},
+			data:    models.CurrenciesData{},
+			want:    1,
+			wantErr: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := Converter(tt.args.valuetes)
+			got, err := Converter(tt.args)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Converter() error = %v, wantErr %v", err, tt.wantErr)
 				return
