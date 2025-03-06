@@ -8,8 +8,6 @@ import (
 )
 
 func Input() (models.InputData, error) {
-	var input models.InputData
-
 	fmt.Println("input count curr1 curr2")
 	var count float64
 	var exchanged string
@@ -19,6 +17,15 @@ func Input() (models.InputData, error) {
 	fmt.Scan(&exchanged)
 	fmt.Scan(&received)
 
+	input, err := parseInputData(count, exchanged, received)
+	if err != nil {
+		return input, err
+	}
+	return input, nil
+}
+
+func parseInputData(count float64, exchanged string, received string) (models.InputData, error) {
+	var input models.InputData
 	if count <= 0 {
 		return input, fmt.Errorf("can't be less than 0: ")
 	}

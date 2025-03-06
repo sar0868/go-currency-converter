@@ -31,7 +31,10 @@ func ChoiceAction() string {
 func Actions(action string) {
 	switch action {
 	case "1":
-		service.Input()
+		_, err := service.Input()
+		if err != nil {
+			fmt.Printf("Error input request: %v\n", err)
+		}
 	case "2":
 		fmt.Println(models.ValidList)
 	case "3":

@@ -7,14 +7,6 @@ import (
 )
 
 func Converter(inputData models.InputData, data models.CurrenciesData) (float64, error) {
-	rub := models.Data{
-		NumCode:  "643",
-		CharCode: "RUB",
-		Nominal:  1,
-		Value:    1,
-		Name:     "Российский рубль",
-	}
-	data.Valute["RUB"] = rub
 	var result float64
 	curVal1 := ValueValute(data, inputData.Exchanged)
 	value1 := curVal1 * inputData.Count
