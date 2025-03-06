@@ -16,5 +16,5 @@ func Converter(inputData models.InputData, data models.CurrenciesData) (float64,
 }
 
 func ValueValute(data models.CurrenciesData, valute models.ValName) float64 {
-	return math.Round(data.Valute[string(valute)].Value*100/float64(data.Valute[string(valute)].Nominal)) / 100
+	return data.Valute[string(valute)].Value / float64(data.Valute[string(valute)].Nominal)
 }

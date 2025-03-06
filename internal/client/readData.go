@@ -1,4 +1,4 @@
-package service
+package client
 
 import (
 	"encoding/json"
@@ -21,6 +21,5 @@ func GetData(body []byte) (models.CurrenciesData, error) {
 		Name:     "Российский рубль",
 	}
 	data.Valute["RUB"] = rub
-	fmt.Println(data)
 	return data, nil
 }

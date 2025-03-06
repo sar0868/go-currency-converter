@@ -36,6 +36,48 @@ func TestConverter(t *testing.T) {
 			want: 1,
 		},
 		{
+			name: "Converted 20 CZK(10 CZK - 38.2135 RUB) UZS(10000 UZS - 69.434 RUB): expected 11007.14",
+			args: models.InputData{
+				Count:     20,
+				Exchanged: models.CZK,
+				Received:  models.UZS,
+			},
+			data: models.CurrenciesData{
+				Valute: map[string]models.Data{
+					"CZK": {
+						Nominal: 10,
+						Value:   38.2135,
+					},
+					"UZS": {
+						Nominal: 10000,
+						Value:   69.434,
+					},
+				},
+			},
+			want: 11007.14,
+		},
+		{
+			name: "Converted 50000 RUB UZS(10000 UZS - 69.434 RUB): expected 7201083.04",
+			args: models.InputData{
+				Count:     50000,
+				Exchanged: models.RUB,
+				Received:  models.UZS,
+			},
+			data: models.CurrenciesData{
+				Valute: map[string]models.Data{
+					"RUB": {
+						Nominal: 1,
+						Value:   1,
+					},
+					"UZS": {
+						Nominal: 10000,
+						Value:   69.434,
+					},
+				},
+			},
+			want: 7201083.04,
+		},
+		{
 			name: "Converted 1 EUR(3) USD(2): expected 1.5",
 			args: models.InputData{
 				Count:     1,
