@@ -40,5 +40,7 @@ email: <safarov-ar@yandex.ru>
 
 Зачёт от 10 баллов
 
-docker compose build
-docker compose run app
+### Сборка и запуск docker compose
+
+`docker compose build`  
+`docker compose run app`
