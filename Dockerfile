@@ -8,7 +8,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
 
-RUN go build -o /currency-converter 
+RUN go build -o /currency-converter cmd/main.go
 
 FROM alpine:latest
 COPY --from=builder /currency-converter /currency-converter
