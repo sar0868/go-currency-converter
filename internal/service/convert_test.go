@@ -1,6 +1,7 @@
 package service
 
 import (
+	"math"
 	"testing"
 
 	"github.com/sar0868/currency_converter/internal/models"
@@ -122,8 +123,9 @@ func TestConverter(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result, _ := Converter(tt.args, tt.data)
-			assert.Equal(t, tt.want, result)
+			result := Converter(tt.args, tt.data)
+			actual := math.Round(result*100) / 100
+			assert.Equal(t, tt.want, actual)
 		})
 	}
 }

@@ -13,9 +13,6 @@ func CurrencyConvertor() (float64, models.InputData, error) {
 	if err != nil {
 		return result, inputData, fmt.Errorf("error input request: %w", err)
 	}
-	result, errConverted := Converter(inputData, config.Data)
-	if errConverted != nil {
-		return result, inputData, fmt.Errorf("error converter: %w", errConverted)
-	}
+	result = Converter(inputData, config.Data)
 	return result, inputData, nil
 }

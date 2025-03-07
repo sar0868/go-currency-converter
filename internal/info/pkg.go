@@ -18,8 +18,9 @@ func InputInfo() {
 }
 
 func Show(result float64, req models.InputData) {
-	currancyName := config.Data.Valute[string(req.Received)].Name
-	fmt.Printf("результат %.2f %s (%v)\n", result, req.Received, currancyName)
+	currencyName := config.Data.Valute[string(req.Received)].Name
+	fmt.Println("--------------------------")
+	fmt.Printf("результат %.4f %s (%v)\n", result, req.Received, currencyName)
 }
 
 func Menu() {
@@ -32,6 +33,7 @@ func Menu() {
 
 func choiceAction() string {
 	var choice string
+	fmt.Print("Введите Ваш выбор: ")
 	fmt.Scan(&choice)
 	return choice
 }
@@ -51,7 +53,7 @@ func Actions(action string) {
 count[количество обменеваемой валюты] exchenged[название 
 обменеваемой валюты из списка валют] received[название 
 получаемой валюты из списка валют]`
-		fmt.Println(msg)
+		fmt.Printf("\n%s\n", msg)
 	case "4":
 		fmt.Println("exit")
 		os.Exit(0)
@@ -59,14 +61,15 @@ count[количество обменеваемой валюты] exchenged[на
 }
 
 func printListCurrencies() {
+	fmt.Println("\nСписок обозначений валют:")
 	for i := 0; i < len(models.ValidList); {
-		for j := 0; j < 5; j++ {
-			if (i + j) == len(models.ValidList) {
+		for j := 0; j < 8; j++ {
+			if (i + j) >= len(models.ValidList) {
 				continue
 			}
 			fmt.Printf("%s ", models.ValidList[i+j])
 		}
 		fmt.Println()
-		i += 5
+		i += 8
 	}
 }

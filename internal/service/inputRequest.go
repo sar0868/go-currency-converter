@@ -8,7 +8,7 @@ import (
 )
 
 func Input() (models.InputData, error) {
-	fmt.Println("input count curr1 curr2")
+	fmt.Println("введите данные: [количество] [обменеваемая валюта] [получаемая валюта]")
 	var count float64
 	var exchanged string
 	var received string
