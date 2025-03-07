@@ -39,3 +39,8 @@ email: <safarov-ar@yandex.ru>
 - Понятность и чистота кода - до 3 баллов.
 
 Зачёт от 10 баллов
+
+### Сборка и запуск docker compose
+
+`docker compose build`  
+`docker compose run app`
