@@ -22,7 +22,7 @@ jobs:
       - name: Linters
         uses: golangci/golangci-lint-action@v3
         with:
-          version: v1.53.3
+          version: v1.64.6
           working-directory: .
 
       - name: Build
