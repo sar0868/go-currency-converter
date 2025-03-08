@@ -6,17 +6,11 @@ linters-settings:
     lines: 150
     statements: 80
 
-# issues:
-#   exclude-rules:
-#     - path: _test\.go
-#       linters:
-#         - errcheck
-#         - dupl
-#         - gocyclo
-#         - gosec
-#     - path: /
-#       linters:
-#         - typecheck
+issues:
+  exclude-rules:
+    - path: /
+      linters:
+        - typecheck
 
 linters:
   disable-all: true
@@ -64,7 +58,6 @@ linters:
     - tagliatelle
     - thelper
     - tparallel
-    - typecheck
     - unconvert
     - unparam
     - unused
